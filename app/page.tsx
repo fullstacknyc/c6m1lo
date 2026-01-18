@@ -72,7 +72,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center">
-        <h1 className="text-5xl font-bold min-h-[4rem] flex items-center">
+        <h1 className="text-5xl font-bold min-h-16 flex items-center">
           <TypewriterText names={names} />
         </h1>
         <p className="mt-4 text-lg text-gray-400">

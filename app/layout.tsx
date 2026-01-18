@@ -3,6 +3,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { useState } from "react";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -40,7 +41,7 @@ export default function RootLayout({
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-8">
-                  <Link href="https://www.linkedin.com/in/camilogomezvalencia/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                  <Link href="/Resume.pdf" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                     Resume
                   </Link>
                   <Link href="https://github.com/fullstacknyc?tab=repositories" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
