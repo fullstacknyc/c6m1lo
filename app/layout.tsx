@@ -23,6 +23,9 @@ export default function RootLayout({
 }>) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+const footer = () => {
+  
+}
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -49,6 +52,9 @@ export default function RootLayout({
                   </Link>
                   <Link href="https://buy.stripe.com/7sYbJ1aEBdEw6dRfKv9oc08" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                     Donate
+                  </Link>
+                  <Link href="/privacy" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                    Privacy
                   </Link>
                 </div>
               </div>
