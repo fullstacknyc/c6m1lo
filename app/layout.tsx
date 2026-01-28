@@ -36,15 +36,15 @@ export default function RootLayout({
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
                 <Link href="/" className="text-white text-xl font-semibold hover:text-gray-300 transition-colors duration-200">
-                  Portfolio
+                  Camilo
                 </Link>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-8">
-                  <Link href="./Camilo_Resume_Updated.pdf" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                  <Link href="./resume" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                     Resume
                   </Link>
-                  <Link href="https://github.com/fullstacknyc?tab=repositories" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                  <Link href="/projects" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                     Projects
                   </Link>
                   <Link href="https://buy.stripe.com/7sYbJ1aEBdEw6dRfKv9oc08" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
@@ -76,14 +76,14 @@ export default function RootLayout({
               <div className="md:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-800">
                   <Link 
-                    href="https://www.linkedin.com/in/camilogomezvalencia" 
+                    href="./resume" 
                     className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Resume
                   </Link>
                   <Link 
-                    href="https://www.github.com/fullstacknyc/" 
+                    href="./projects" 
                     className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
