@@ -36,7 +36,7 @@ const toggleMobileMenu = () => {
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
                 <Link href="/" className="text-white text-xl font-semibold hover:text-gray-300 transition-colors duration-200">
-                  Camilo
+                  Camilo777
                 </Link>
               </div>
               <div className="hidden md:block">
