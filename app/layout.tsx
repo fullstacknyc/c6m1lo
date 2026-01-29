@@ -41,7 +41,7 @@ const toggleMobileMenu = () => {
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-8">
-                  <Link href="./resume" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
+                  <Link href="/resume" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
                     Resume
                   </Link>
                   <Link href="/projects" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
@@ -76,21 +76,21 @@ const toggleMobileMenu = () => {
               <div className="md:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-800">
                   <Link 
-                    href="./resume" 
+                    href="/resume" 
                     className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Resume
                   </Link>
                   <Link 
-                    href="./projects" 
+                    href="/projects" 
                     className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Projects
                   </Link>
                   <Link 
-                    href="https://buy.stripe.com/7sYbJ1aEBdEw6dRfKv9oc08" 
+                    href="https://buy.stripe.com/dRm8wPh2Z2ZS1XB2XJ9oc09" 
                     className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
