@@ -9,3 +9,5 @@ const workout = () => {
         </div>
     )
 }
+
+export default workout;
