@@ -1,7 +1,5 @@
 "use client"
 
-import { useState, useEffect } from 'react'
-
 const homepage = () => {
   return (
     // Dictionary style display of autodidact
