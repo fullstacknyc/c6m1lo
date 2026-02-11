@@ -29,7 +29,7 @@ const toggleMobileMenu = () => {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.gif" />
+        <link rel="icon" href="/favicon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
