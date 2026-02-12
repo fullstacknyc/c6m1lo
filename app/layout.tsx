@@ -1,10 +1,18 @@
-"use client";
-
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import { useState } from "react";
+import type { Metadata } from "next";
 
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+
+
+export const metadata: Metadata = {
+  title: "Camilo777",
+  description: "Camilo Gomez's personal website and portfolio.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: "Camilo Gomez, Camilo777, personal website, portfolio, resume, projects",
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,89 +29,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
-        <nav className="bg-black border-b border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex items-center">
-                <Link href="/" className="text-white text-xl font-semibold hover:text-gray-300 transition-colors duration-200">
-                  Camilo777
-                </Link>
-              </div>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-8">
-                  <Link href="/resume" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                    Resume
-                  </Link>
-                  <Link href="/projects" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                    Projects
-                  </Link>
-                  <Link href="https://buy.stripe.com/dRm8wPh2Z2ZS1XB2XJ9oc09" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                    Donate
-                  </Link>
-                </div>
-              </div>
-              {/* Mobile menu button */}
-              <div className="md:hidden">
-                <button 
-                  type="button" 
-                  className="text-gray-300 hover:text-white focus:outline-none focus:text-white p-2"
-                  onClick={toggleMobileMenu}
-                  aria-label="Toggle mobile menu"
-                  aria-expanded={isMobileMenuOpen}
-                >
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    {isMobileMenuOpen ? (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    ) : (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    )}
-                  </svg>
-                </button>
-              </div>
-            </div>
-            {/* Mobile menu */}
-            {isMobileMenuOpen && (
-              <div className="md:hidden">
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-800">
-                  <Link 
-                    href="/resume" 
-                    className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Resume
-                  </Link>
-                  <Link 
-                    href="/projects" 
-                    className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Projects
-                  </Link>
-                  <Link 
-                    href="https://buy.stripe.com/dRm8wPh2Z2ZS1XB2XJ9oc09" 
-                    className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Donate
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
-        </nav>
+        <Navbar />
         <main className="min-h-screen">
           {children}
         </main>
@@ -112,15 +43,15 @@ const toggleMobileMenu = () => {
             <p className="text-center text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} Camilo777. All rights reserved.
             </p>
-            <Link href="/privacy" className="text-gray-400 hover:text-gray-200 text-sm block text-center mt-2">
+            <a href="/privacy" className="text-gray-400 hover:text-gray-200 text-sm block text-center mt-2">
               Privacy Policy
-            </Link>
-            <Link href="/support" className="text-gray-400 hover:text-gray-200 text-sm block text-center mt-1">
+            </a>
+            <a href="/support" className="text-gray-400 hover:text-gray-200 text-sm block text-center mt-1">
               Support
-            </Link>
-            <Link href="/tos" className="text-gray-400 hover:text-gray-200 text-sm block text-center mt-1">
+            </a>
+            <a href="/tos" className="text-gray-400 hover:text-gray-200 text-sm block text-center mt-1">
               Terms of Service
-            </Link>
+            </a>
           </div>
         </footer>
       </body>
