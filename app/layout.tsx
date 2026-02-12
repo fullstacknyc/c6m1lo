@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Camilo777",
   description: "Camilo Gomez's personal website and portfolio.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "app/favicon.ico",
   },
   keywords: "Camilo Gomez, Camilo777, personal website, portfolio, resume, projects",
 };
