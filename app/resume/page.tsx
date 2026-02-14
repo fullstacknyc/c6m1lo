@@ -15,7 +15,7 @@ const ResumePage = () => {
                 <li>Spanish Medical Annotation- Centific</li>
                 <li>Certified Medical Interpreter - Propio</li>
                 <li>Native Spanish/English</li>
-                <li>New Jersey Institute Of Technology</li>
+                <li>New Jersey City University</li>
                 <li>Hudson County Community College</li>
                 <li>North Bergen High School</li>
             </ul>
