@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Lora } from "next/font/google";
+import "./globals.css";
 
 import Navbar from "@/components/Navbar";
-import Adsense
- from "@/components/adsense";
-import "./globals.css";
-import Script from "next/script";
+import Adsense from "@/components/adsense";
 
 const bodyFont = Plus_Jakarta_Sans({
   variable: "--font-body",
