@@ -22,6 +22,12 @@ const projects = [
     description: "Join the community for discussions, collaborations, and updates.",
     href: "https://discord.gg/Khd7HPUzRK",
     cta: "Join server",
+  },
+  {
+    title: "Steam Profile",
+    description: "Gaming profile showcasing current games and achievements.",
+    href: "https://steamcommunity.com/id/fullstacknyc",
+    cta: "View profile",
   }
 ];
 
