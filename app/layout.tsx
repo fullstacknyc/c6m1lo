@@ -13,10 +13,10 @@ const bodyFont = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.camilo777.com"),
   title: {
-    default: "Camilo Gomez | Portfolio",
+    default: "Camilo777",
     template: "%s | Camilo Gomez",
   },
-  description: "Personal site and portfolio for Camilo Gomez.",
+  description: "Portfolio and personal website of my projects, skills, and experience.",
   robots: {
     index: true,
     follow: true,
@@ -38,6 +38,20 @@ export const metadata: Metadata = {
     "projects",
     "resume",
   ],
+  openGraph: {
+    title: "Camilo777",
+    description: "Portfolio and personal website of my projects, skills, and experience.",
+    url: "https://www.camilo777.com",
+    siteName: "Camilo777",
+    images: [
+      {
+        url: "https://www.camilo777.com/198.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Open Graph Image",
+      },
+    ]
+  }
 };
 
 
