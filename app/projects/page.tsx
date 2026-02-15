@@ -17,6 +17,12 @@ const projects = [
     href: "/referral",
     cta: "Open page",
   },
+  {
+    title: "Discord Server",
+    description: "Join the community for discussions, collaborations, and updates.",
+    href: "https://discord.gg/Khd7HPUzRK",
+    cta: "Join server",
+  }
 ];
 
 export default function ProjectsPage() {

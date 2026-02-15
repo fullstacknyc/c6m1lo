@@ -1,8 +1,13 @@
 const experience = [
   "Transcriptionist, Uber AI Solutions",
-  "Air Traffic Control Domain Specialist, Alignerr",
-  "Transcription, Annotation, and Summarization, Centific",
+  "Air Traffic Control Transcriptionist, Alignerr",
+  "Spanish Medical Annotation Subject Matter Expert, Centific",
   "Certified Medical Interpreter, Propio",
+  "Cook, KPot Korean BBQ & Hot Pot",
+  "Certified Medical Interpreter, Kelly Services",
+  "Legal Interpreter, Kates Nussman Ellis Fahri & Earle, LLP",
+  "Cook & Crew Member, Chipotle Mexican Grill",
+  "Front & Back of House Crew Member, Gong Cha Taiwan"
 ];
 
 const education = [
@@ -41,10 +46,10 @@ export default function ResumePage() {
           <article className="info-card">
             <h2 className="text-xl font-semibold">Skills</h2>
             <ul className="muted mt-2 space-y-1">
-              <li>English and Spanish (native fluency)</li>
-              <li>Data annotation and transcription quality control</li>
-              <li>Medical interpretation and terminology handling</li>
-              <li>NLP-focused review and summarization workflows</li>
+              <li>English/Spanish Translation, Annotation, & Transcription - Native Level</li>
+              <li>Data Annotation and Quality Assurance of Sensitive NLP Datasets</li>
+              <li>Medical Terminology and Interpretation</li>
+              <li>Engineering across multiple domains and technologies (Biology, Nutrition, AI/LLM, Neural Networks, Kinesiology, Immunology, Medicine, Cybersecurity, & More)</li>
             </ul>
           </article>
         </div>

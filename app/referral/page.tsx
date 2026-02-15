@@ -13,6 +13,11 @@ const referrals = [
     name: "Coinbase",
     href: "https://coinbase.com/join/ZXD8P8E?src=referral-link",
     description: "Exchange referral program link.",
+  },
+  {
+    name: "Chime",
+    href: "https://www.chime.com/r/juangomez1463/?c=s",
+    description: "Chime credit builder referral program link.",
   }
 ];
 
