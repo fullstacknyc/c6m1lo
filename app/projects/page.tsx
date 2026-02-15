@@ -6,10 +6,10 @@ const projects = [
     cta: "View profile",
   },
   {
-    title: "Personal Website",
-    description: "Public portfolio and contact information.",
-    href: "https://www.camilo777.com",
-    cta: "Open site",
+    title: "Stripe Donation",
+    description: "Donate any amount to support ongoing projects and site maintenance.",
+    href: "https://buy.stripe.com/dRm8wPh2Z2ZS1XB2XJ9oc09",
+    cta: "Donate",
   },
   {
     title: "Referral Resources",
@@ -24,7 +24,7 @@ export default function ProjectsPage() {
     <div className="page-wrap">
       <section className="panel p-8 sm:p-10">
         <span className="kicker">Projects</span>
-        <h1 className="mt-5 text-4xl font-semibold sm:text-5xl">Selected Links</h1>
+        <h1 className="mt-5 text-4xl font-semibold sm:text-5xl">Projects</h1>
         <p className="muted mt-4 max-w-2xl">
           A quick index of public-facing links that represent current work and profile details.
         </p>

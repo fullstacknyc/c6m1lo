@@ -13,7 +13,7 @@ const referrals = [
     name: "Coinbase",
     href: "https://coinbase.com/join/ZXD8P8E?src=referral-link",
     description: "Exchange referral program link.",
-  },
+  }
 ];
 
 export default function ReferralPage() {
