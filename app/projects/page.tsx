@@ -1,11 +1,5 @@
 const projects = [
   {
-    title: "LinkedIn Profile",
-    description: "Professional background, recent roles, and endorsements.",
-    href: "https://www.linkedin.com/in/camilogomezvalencia",
-    cta: "View profile",
-  },
-  {
     title: "Stripe Donation",
     description: "Donate any amount to support ongoing projects and site maintenance.",
     href: "https://buy.stripe.com/dRm8wPh2Z2ZS1XB2XJ9oc09",
@@ -13,7 +7,7 @@ const projects = [
   },
   {
     title: "Referral Resources",
-    description: "A curated list of referral links and programs.",
+    description: "A curated list of useful programs and resources that I personally recommend.",
     href: "/referral",
     cta: "Open page",
   },
@@ -22,12 +16,6 @@ const projects = [
     description: "Join the community for discussions, collaborations, and updates.",
     href: "https://discord.gg/Khd7HPUzRK",
     cta: "Join server",
-  },
-  {
-    title: "Steam Profile",
-    description: "Gaming profile showcasing current games and achievements.",
-    href: "https://steamcommunity.com/id/fullstacknyc",
-    cta: "View profile",
   },
   {
     title: "Bible App",
