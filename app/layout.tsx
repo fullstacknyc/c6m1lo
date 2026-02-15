@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
-import AdSense from "@/components/adsense";
+import AdSense from "@/components/AdSense";
 
 const bodyFont = Plus_Jakarta_Sans({
   variable: "--font-body",
