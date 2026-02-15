@@ -80,7 +80,7 @@ export default function HomePage() {
       </section>
       <section className="panel p-8 sm:p-10">
         <span className="kicker">When?</span>
-        <h2 className="mt-5 text-3xl font-semibold sm:text-4xl">24/7 Services</h2>
+        <h2 className="mt-5 text-3xl font-semibold sm:text-4xl">Asynchronous Services</h2>
         <p className="muted mt-4 max-w-2xl text-lg">
           The projects I am creating and constantly innovating are meant to stand on their own with minimal supervision while providing value to others. I am always available to provide support and updates as needed, and I am committed to ensuring that my projects continue to deliver value over time.
         </p>
