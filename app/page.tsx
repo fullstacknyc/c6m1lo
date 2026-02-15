@@ -1,6 +1,6 @@
 export default function HomePage() {
   return (
-    <div className="page-wrap">
+    <div className="page-wrap space-y-6">
       <section className="panel p-8 sm:p-10">
         <span className="kicker">Who?</span>
         <h1 className="mt-5 text-4xl font-semibold sm:text-5xl">Camilo Gomez</h1>

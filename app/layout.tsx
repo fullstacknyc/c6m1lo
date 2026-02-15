@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Lora } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
@@ -7,11 +7,6 @@ import AdSense from "@/components/AdSense";
 
 const bodyFont = Plus_Jakarta_Sans({
   variable: "--font-body",
-  subsets: ["latin"],
-});
-
-const headingFont = Lora({
-  variable: "--font-heading",
   subsets: ["latin"],
 });
 
@@ -56,20 +51,20 @@ export default function RootLayout({
       <head>
         <AdSense pId="ca-pub-9659879669905345"></AdSense>
       </head>
-      <body className={`${bodyFont.variable} ${headingFont.variable} antialiased`}>
+      <body className={`${bodyFont.variable} antialiased`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
-        <footer className="mt-14 border-t border-slate-700/70 bg-slate-950/80">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-6 text-sm text-slate-300 sm:px-8">
+        <footer className="mt-14 border-t border-neutral-800 bg-black/90">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-6 text-sm text-neutral-400 sm:px-8">
             <p>© {new Date().getFullYear()} Camilo Gomez. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-4">
-              <a className="transition hover:text-white" href="/privacy">
+              <a className="transition hover:text-neutral-100" href="/privacy">
                 Privacy Policy
               </a>
-              <a className="transition hover:text-white" href="/support">
+              <a className="transition hover:text-neutral-100" href="/support">
                 Support
               </a>
-              <a className="transition hover:text-white" href="/tos">
+              <a className="transition hover:text-neutral-100" href="/tos">
                 Terms of Service
               </a>
             </div>

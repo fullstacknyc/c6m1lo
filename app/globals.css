@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030712;
-  --surface: #0b1222;
-  --surface-muted: #111c33;
-  --foreground: #e2e8f0;
-  --foreground-soft: #94a3b8;
-  --border: #22314f;
-  --accent: #14b8a6;
-  --accent-strong: #5eead4;
-  --shadow: 0 24px 42px -30px rgba(2, 6, 23, 0.75);
-  --radius: 20px;
+  --background: #000000;
+  --surface: #0a0a0a;
+  --surface-muted: #131313;
+  --foreground: #f5f5f7;
+  --foreground-soft: #a1a1aa;
+  --border: #262626;
+  --accent: #d4d4d8;
+  --accent-strong: #fafafa;
+  --shadow: 0 28px 50px -34px rgba(0, 0, 0, 0.9);
+  --radius: 18px;
 }
 
 * {
@@ -25,9 +25,9 @@ body {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 0% 0%, rgba(45, 212, 191, 0.2), transparent 38%),
-    radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.16), transparent 42%),
-    linear-gradient(180deg, #030712 0%, #020617 100%);
+    radial-gradient(circle at 15% -10%, rgba(255, 255, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 85% -20%, rgba(255, 255, 255, 0.04), transparent 34%),
+    linear-gradient(180deg, #050505 0%, #000000 100%);
   color: var(--foreground);
   font-family: var(--font-body), "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -38,9 +38,9 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
-  background-size: 36px 36px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 42px 42px;
   z-index: -1;
 }
 
@@ -48,10 +48,10 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-heading), Georgia, serif;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  color: #f8fafc;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #ffffff;
 }
 
 a {
@@ -77,7 +77,7 @@ a {
 }
 
 .panel {
-  background: color-mix(in srgb, var(--surface) 93%, black 7%);
+  background: color-mix(in srgb, var(--surface) 96%, black 4%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -93,8 +93,8 @@ a {
   gap: 0.5rem;
   padding: 0.4rem 0.85rem;
   border-radius: 9999px;
-  border: 1px solid rgba(45, 212, 191, 0.24);
-  background: rgba(20, 184, 166, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--accent-strong);
   font-size: 0.83rem;
   font-weight: 600;
@@ -105,14 +105,14 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: var(--accent-strong);
+  color: var(--accent);
   font-weight: 600;
   text-decoration: none;
   transition: color 200ms ease;
 }
 
 .primary-link:hover {
-  color: #ccfbf1;
+  color: #ffffff;
 }
 
 .grid-cards {
@@ -124,14 +124,14 @@ a {
 .info-card {
   padding: 1.1rem;
   border-radius: 16px;
-  border: 1px solid rgba(100, 116, 139, 0.44);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background: var(--surface-muted);
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .info-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(45, 212, 191, 0.38);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
 @media (max-width: 640px) {
