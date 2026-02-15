@@ -40,6 +40,15 @@ export default function ResumePage() {
               >
                 LinkedIn Profile →
               </a>
+              <a
+                className="primary-link"
+                href="https://github.com/fullstacknyc"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub Profile →</a>
+                <a className="primary-link" href="https://www.discord.gg/Khd7HPUzRK" target="_blank" rel="noreferrer">
+                Discord Server →
+              </a>
             </div>
           </article>
 
