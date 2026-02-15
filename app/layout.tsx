@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import Script from "next/script";
 
 const bodyFont = Plus_Jakarta_Sans({
   variable: "--font-body",
@@ -39,6 +40,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          id="adsense-loader"
+          async
+          strategy="afterInteractive"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9659879669905345`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${bodyFont.variable} ${headingFont.variable} antialiased`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
