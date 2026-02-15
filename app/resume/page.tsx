@@ -23,17 +23,19 @@ export default function ResumePage() {
             <h2 className="text-xl font-semibold">Contact</h2>
             <p className="muted mt-2">Camilo Gomez</p>
             <p className="muted">Manhattan, NY 10012</p>
-            <a className="primary-link mt-3" href="mailto:c6m1lo@proton.me">
-              c6m1lo@proton.me
-            </a>
-            <a
-              className="primary-link mt-2"
-              href="https://www.linkedin.com/in/camilogomezvalencia/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn Profile →
-            </a>
+            <div className="mt-3 flex flex-col gap-2">
+              <a className="primary-link" href="mailto:c6m1lo@proton.me">
+                c6m1lo@proton.me
+              </a>
+              <a
+                className="primary-link"
+                href="https://www.linkedin.com/in/camilogomezvalencia/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn Profile →
+              </a>
+            </div>
           </article>
 
           <article className="info-card">

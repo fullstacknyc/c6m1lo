@@ -39,20 +39,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.variable} ${headingFont.variable} antialiased text-slate-900`}>
+      <body className={`${bodyFont.variable} ${headingFont.variable} antialiased`}>
         <Navbar />
         <main className="min-h-screen">{children}</main>
-        <footer className="mt-14 border-t border-slate-300/70 bg-white/85">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-6 text-sm text-slate-600 sm:px-8">
+        <footer className="mt-14 border-t border-slate-700/70 bg-slate-950/80">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-5 py-6 text-sm text-slate-300 sm:px-8">
             <p>© {new Date().getFullYear()} Camilo Gomez. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-4">
-              <a className="transition hover:text-slate-900" href="/privacy">
+              <a className="transition hover:text-white" href="/privacy">
                 Privacy Policy
               </a>
-              <a className="transition hover:text-slate-900" href="/support">
+              <a className="transition hover:text-white" href="/support">
                 Support
               </a>
-              <a className="transition hover:text-slate-900" href="/tos">
+              <a className="transition hover:text-white" href="/tos">
                 Terms of Service
               </a>
             </div>

@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --surface: #ffffff;
-  --surface-muted: #f1f5f9;
-  --foreground: #0f172a;
-  --foreground-soft: #475569;
-  --border: #cbd5e1;
-  --accent: #0f766e;
-  --accent-strong: #115e59;
-  --shadow: 0 16px 40px -28px rgba(15, 23, 42, 0.45);
+  --background: #030712;
+  --surface: #0b1222;
+  --surface-muted: #111c33;
+  --foreground: #e2e8f0;
+  --foreground-soft: #94a3b8;
+  --border: #22314f;
+  --accent: #14b8a6;
+  --accent-strong: #5eead4;
+  --shadow: 0 24px 42px -30px rgba(2, 6, 23, 0.75);
   --radius: 20px;
 }
 
@@ -25,9 +25,9 @@ body {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.14), transparent 42%),
-    radial-gradient(circle at 100% 0%, rgba(14, 116, 144, 0.14), transparent 44%),
-    linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    radial-gradient(circle at 0% 0%, rgba(45, 212, 191, 0.2), transparent 38%),
+    radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.16), transparent 42%),
+    linear-gradient(180deg, #030712 0%, #020617 100%);
   color: var(--foreground);
   font-family: var(--font-body), "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -38,8 +38,8 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
   background-size: 36px 36px;
   z-index: -1;
 }
@@ -51,7 +51,7 @@ h4 {
   font-family: var(--font-heading), Georgia, serif;
   letter-spacing: -0.01em;
   line-height: 1.25;
-  color: #0b1324;
+  color: #f8fafc;
 }
 
 a {
@@ -77,7 +77,7 @@ a {
 }
 
 .panel {
-  background: color-mix(in srgb, var(--surface) 94%, white 6%);
+  background: color-mix(in srgb, var(--surface) 93%, black 7%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -93,8 +93,8 @@ a {
   gap: 0.5rem;
   padding: 0.4rem 0.85rem;
   border-radius: 9999px;
-  border: 1px solid rgba(15, 118, 110, 0.18);
-  background: rgba(15, 118, 110, 0.08);
+  border: 1px solid rgba(45, 212, 191, 0.24);
+  background: rgba(20, 184, 166, 0.13);
   color: var(--accent-strong);
   font-size: 0.83rem;
   font-weight: 600;
@@ -112,7 +112,7 @@ a {
 }
 
 .primary-link:hover {
-  color: #0f172a;
+  color: #ccfbf1;
 }
 
 .grid-cards {
@@ -124,14 +124,14 @@ a {
 .info-card {
   padding: 1.1rem;
   border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.45);
+  border: 1px solid rgba(100, 116, 139, 0.44);
   background: var(--surface-muted);
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .info-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(15, 118, 110, 0.3);
+  border-color: rgba(45, 212, 191, 0.38);
 }
 
 @media (max-width: 640px) {
