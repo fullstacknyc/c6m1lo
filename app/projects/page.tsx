@@ -28,6 +28,12 @@ const projects = [
     description: "Gaming profile showcasing current games and achievements.",
     href: "https://steamcommunity.com/id/fullstacknyc",
     cta: "View profile",
+  },
+  {
+    title: "Bible App",
+    description: "A simple Bible reading app built with React and Next.js.",
+    href: "/bible",
+    cta: "Open app",
   }
 ];
 

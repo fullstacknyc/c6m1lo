@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "bible:download-kjv": "node scripts/download-kjv.mjs"
   },
   "dependencies": {
     "next": "^15.5.6",
