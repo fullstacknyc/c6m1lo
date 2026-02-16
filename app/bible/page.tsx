@@ -433,7 +433,7 @@ export default function BiblePage() {
             ) : (
               <article className="info-card mx-auto max-w-4xl overflow-hidden">
                 <p
-                  className="max-w-full overflow-hidden text-pretty break-words"
+                  className="max-w-full overflow-hidden text-pretty wrap-break-word"
                   style={{ fontSize: `${fontScale}%`, lineHeight }}
                 >
                   {visibleVerses.map((verse) => (
