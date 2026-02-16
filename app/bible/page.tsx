@@ -273,8 +273,7 @@ export default function BiblePage() {
         <span className="kicker">KJV Reader</span>
         <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">King James Bible</h1>
         <p className="muted mt-3 max-w-3xl">
-          Full-text, chapter-based reading with fast local loading. Built for broad access and long-form
-          daily use.
+          Full-text, chapter-based reading with fast local loading. Built for broad access and long-form daily use. Use the right and left arrow keys to navigate chapters.
         </p>
       </section>
 
