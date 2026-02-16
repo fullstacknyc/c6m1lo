@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type Verse = {
   number: number;
@@ -84,6 +84,7 @@ export default function BiblePage() {
   const [progress, setProgress] = useState<ProgressMap>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const chapterEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setProgress(getSavedProgress());
@@ -211,6 +212,9 @@ export default function BiblePage() {
     [progress],
   );
   const totalProgressPercent = toPercent(readChaptersTotal, totalChapters);
+  const isCurrentChapterRead =
+    !!selectedBookId &&
+    (progress[selectedBookId] ?? []).includes(selectedChapter);
 
   const handlePreviousChapter = () => {
     if (!canGoPrevious) return;
@@ -221,6 +225,22 @@ export default function BiblePage() {
     if (!canGoNext) return;
     handleChapterChange(selectedChapter + 1);
   };
+
+  const markCurrentChapterRead = useCallback(() => {
+    if (!selectedBookId || !activeChapter) return;
+
+    setProgress((current) => {
+      const existing = current[selectedBookId] ?? [];
+      if (existing.includes(activeChapter.number)) {
+        return current;
+      }
+
+      const nextForBook = [...existing, activeChapter.number].sort((a, b) => a - b);
+      const next = { ...current, [selectedBookId]: nextForBook };
+      saveProgress(next);
+      return next;
+    });
+  }, [activeChapter, selectedBookId]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -252,20 +272,23 @@ export default function BiblePage() {
   }, [canGoNext, canGoPrevious, handleChapterChange, selectedChapter]);
 
   useEffect(() => {
-    if (!selectedBookId || !activeChapter) return;
+    if (!chapterEndRef.current || !activeChapter || !selectedBookId || isCurrentChapterRead) {
+      return;
+    }
 
-    setProgress((current) => {
-      const existing = current[selectedBookId] ?? [];
-      if (existing.includes(activeChapter.number)) {
-        return current;
-      }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry?.isIntersecting) {
+          markCurrentChapterRead();
+        }
+      },
+      { threshold: 1 },
+    );
 
-      const nextForBook = [...existing, activeChapter.number].sort((a, b) => a - b);
-      const next = { ...current, [selectedBookId]: nextForBook };
-      saveProgress(next);
-      return next;
-    });
-  }, [activeChapter, selectedBookId]);
+    observer.observe(chapterEndRef.current);
+    return () => observer.disconnect();
+  }, [activeChapter, isCurrentChapterRead, markCurrentChapterRead, selectedBookId]);
 
   return (
     <div className="page-wrap space-y-6">
@@ -431,10 +454,10 @@ export default function BiblePage() {
               <p className="muted">No verses match your search.</p>
             ) : (
               <article className="info-card mx-auto max-w-4xl overflow-hidden">
-                <p
-                  className="max-w-full overflow-hidden text-pretty wrap-break-word"
-                  style={{ fontSize: `${fontScale}%`, lineHeight }}
-                >
+              <p
+                className="max-w-full overflow-hidden text-pretty wrap-break-word"
+                style={{ fontSize: `${fontScale}%`, lineHeight }}
+              >
                   {visibleVerses.map((verse) => (
                     <span key={verse.number} id={`verse-${verse.number}`} className="scroll-mt-28 block">
                       <sup className="mr-1 text-[0.72em] font-semibold text-neutral-400">
@@ -444,6 +467,7 @@ export default function BiblePage() {
                     </span>
                   ))}
                 </p>
+                <div ref={chapterEndRef} aria-hidden="true" className="h-1 w-full" />
               </article>
             )}
           </>
