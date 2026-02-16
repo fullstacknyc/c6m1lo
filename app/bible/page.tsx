@@ -24,6 +24,10 @@ type BookIndexEntry = {
   chapters: number;
 };
 
+type ProgressMap = Record<string, number[]>;
+
+const PROGRESS_KEY = "bible:chapterProgress";
+
 function cleanVerseText(text: string) {
   return text.replace(/^#\s*/, "").trim();
 }
@@ -43,6 +47,32 @@ function getSavedChapter(bookId: string) {
   return parsed;
 }
 
+function getSavedProgress(): ProgressMap {
+  if (typeof window === "undefined") return {};
+
+  try {
+    const raw = window.localStorage.getItem(PROGRESS_KEY);
+    if (!raw) return {};
+
+    const parsed = JSON.parse(raw) as ProgressMap;
+    if (!parsed || typeof parsed !== "object") return {};
+
+    return parsed;
+  } catch {
+    return {};
+  }
+}
+
+function saveProgress(progress: ProgressMap) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+}
+
+function toPercent(value: number, total: number) {
+  if (total <= 0) return 0;
+  return Math.min(100, Math.round((value / total) * 100));
+}
+
 export default function BiblePage() {
   const [bookIndex, setBookIndex] = useState<BookIndexEntry[]>([]);
   const [selectedBookId, setSelectedBookId] = useState("");
@@ -51,8 +81,13 @@ export default function BiblePage() {
   const [search, setSearch] = useState("");
   const [fontScale, setFontScale] = useState(100);
   const [lineHeight, setLineHeight] = useState(1.75);
+  const [progress, setProgress] = useState<ProgressMap>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setProgress(getSavedProgress());
+  }, []);
 
   useEffect(() => {
     const loadIndex = async () => {
@@ -165,6 +200,17 @@ export default function BiblePage() {
   const canGoNext = selectedChapter < chapterCount;
   const fontSizeOptions = [90, 95, 100, 105, 110, 115, 120, 125, 130];
   const lineHeightOptions = [1.45, 1.6, 1.75, 1.9, 2.05];
+  const readChaptersInBook = progress[selectedBookId]?.length ?? 0;
+  const bookProgressPercent = toPercent(readChaptersInBook, chapterCount);
+  const totalChapters = useMemo(
+    () => bookIndex.reduce((sum, book) => sum + book.chapters, 0),
+    [bookIndex],
+  );
+  const readChaptersTotal = useMemo(
+    () => Object.values(progress).reduce((sum, chapters) => sum + chapters.length, 0),
+    [progress],
+  );
+  const totalProgressPercent = toPercent(readChaptersTotal, totalChapters);
 
   const handlePreviousChapter = () => {
     if (!canGoPrevious) return;
@@ -204,6 +250,22 @@ export default function BiblePage() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [canGoNext, canGoPrevious, handleChapterChange, selectedChapter]);
+
+  useEffect(() => {
+    if (!selectedBookId || !activeChapter) return;
+
+    setProgress((current) => {
+      const existing = current[selectedBookId] ?? [];
+      if (existing.includes(activeChapter.number)) {
+        return current;
+      }
+
+      const nextForBook = [...existing, activeChapter.number].sort((a, b) => a - b);
+      const next = { ...current, [selectedBookId]: nextForBook };
+      saveProgress(next);
+      return next;
+    });
+  }, [activeChapter, selectedBookId]);
 
   return (
     <div className="page-wrap space-y-6">
@@ -312,6 +374,34 @@ export default function BiblePage() {
               onChange={(event) => setSearch(event.target.value)}
             />
           </label>
+        </div>
+
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-lg border border-neutral-800 bg-neutral-950 p-3">
+            <p className="text-xs text-neutral-400">Current Book Progress</p>
+            <p className="mt-1 text-sm font-semibold text-neutral-100">
+              {readChaptersInBook}/{chapterCount || 0} chapters ({bookProgressPercent}%)
+            </p>
+            <div className="mt-2 h-2 rounded-full bg-neutral-800">
+              <div
+                className="h-2 rounded-full bg-neutral-200 transition-all"
+                style={{ width: `${bookProgressPercent}%` }}
+              />
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-neutral-800 bg-neutral-950 p-3">
+            <p className="text-xs text-neutral-400">Whole Bible Progress</p>
+            <p className="mt-1 text-sm font-semibold text-neutral-100">
+              {readChaptersTotal}/{totalChapters || 0} chapters ({totalProgressPercent}%)
+            </p>
+            <div className="mt-2 h-2 rounded-full bg-neutral-800">
+              <div
+                className="h-2 rounded-full bg-neutral-200 transition-all"
+                style={{ width: `${totalProgressPercent}%` }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
