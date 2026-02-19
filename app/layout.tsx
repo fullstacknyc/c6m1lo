@@ -11,7 +11,7 @@ const bodyFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.camilo777.com"),
+  metadataBase: new URL("https://www.c6m1lo.com"),
   title: {
     default: "Camilo777",
     template: "%s | Camilo Gomez",
@@ -33,19 +33,19 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Camilo Gomez",
-    "Camilo777",
+    "C6m1lo",
     "portfolio",
     "projects",
     "resume",
   ],
   openGraph: {
-    title: "Camilo777",
+    title: "c6m1lo",
     description: "Portfolio and personal website of my projects, skills, and experience.",
-    url: "https://www.camilo777.com",
+    url: "https://www.c6m1lo.com",
     siteName: "Camilo777",
     images: [
       {
-        url: "https://www.camilo777.com/198.jpg",
+        url: "https://www.c6m1lo.com",
         width: 1200,
         height: 630,
         alt: "Open Graph Image",

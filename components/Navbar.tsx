@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-neutral-800/90 bg-black/85 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
         <Link href="/" className="text-lg font-semibold tracking-tight text-neutral-100">
-          Camilo777
+          c6m1lo
         </Link>
         <ul className="flex items-center gap-1">
           {navLinks.map((item) => {
