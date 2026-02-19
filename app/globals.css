@@ -408,14 +408,15 @@ a {
   --beam-w: 38px;
   --beam-h: 240px;
   --beam-d: 24px;
-  transform: translate(-50%, -52%);
+  transform: translate(-50%, -50%);
 }
 
 .cross-beam-horizontal {
-  --beam-w: 150px;
-  --beam-h: 34px;
+  --beam-w: 156px;
+  --beam-h: 32px;
   --beam-d: 24px;
-  transform: translate(-50%, -66%);
+  top: 36%;
+  transform: translate(-50%, -50%);
 }
 
 .face {

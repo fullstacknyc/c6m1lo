@@ -43,9 +43,11 @@ export default function HomePage() {
 
       <section className="home-hero panel">
         <p className="kicker">Camilo Gomez</p>
-        <h1>Love God</h1>
+        <h1>Build with purpose. Move with conviction.</h1>
         <p className="muted hero-copy">
-          Build with purpose. Move with conviction.
+          I combine AI data operations, software engineering, and systems thinking to
+          deliver practical outcomes. You are not hiring potential, you are hiring
+          production momentum.
         </p>
         <div className="hero-actions">
           <a href="/resume" className="hero-btn hero-btn-primary">
