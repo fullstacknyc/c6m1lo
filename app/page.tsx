@@ -43,11 +43,9 @@ export default function HomePage() {
 
       <section className="home-hero panel">
         <p className="kicker">Camilo Gomez</p>
-        <h1>Build with purpose. Move with conviction.</h1>
+        <h1>Portfolio</h1>
         <p className="muted hero-copy">
-          I combine AI data operations, software engineering, and systems thinking to
-          deliver practical outcomes. You are not hiring potential, you are hiring
-          production momentum.
+          Culmination of systems engineering combined with Next.js development.
         </p>
         <div className="hero-actions">
           <a href="/resume" className="hero-btn hero-btn-primary">
